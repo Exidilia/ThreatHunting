@@ -2,6 +2,10 @@
 A few configs for a threathunting server consisting Splunk, OpenCTI and etc.
 This repository will be completed over time.
 
+## Traefik
+In order to use youor server properly, create a traefik on your server first to manage domain names and encryptions and ssl and other stuff.
+I have managed all these with cloudflare and traefik.
+
 ## OpenCTI
 OpenCTI uses Elasticsearch as a core service and it needs lots of RAM (minimum 16GB). also 8 cores of CPU or more.
 you need to clone the repository and start the opencti service first. Edit the ```.env``` file with required values and with the guidence explained in the file itself.
