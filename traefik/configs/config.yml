@@ -1,0 +1,31 @@
+http:
+  routers:
+    splunk:
+      entryPoints:
+        - "http"
+        - "https"
+      rule: "Host(`splunk-panel.change.me`)"
+      service: splunk
+
+    # New router for another domain and port
+    splunk-hec:
+      entryPoints:
+        - "http"
+        - "https"
+      rule: "Host(`splunk-hec.change.me`)"
+      service: splunk-hec
+
+
+  services:
+    splunk:
+      loadBalancer:
+        servers:
+          - url: "http://changeIP:8000/"
+        passHostHeader: true
+
+    # New service definition for another port
+    splunk-hec:
+      loadBalancer:
+        servers:
+          - url: "http://changeIP:8088/"
+        passHostHeader: true
