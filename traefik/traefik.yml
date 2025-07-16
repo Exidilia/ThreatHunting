@@ -1,0 +1,13 @@
+pi:
+  insecure: true
+
+providers:
+  file:
+    filename: "./configs/config.yml"
+    watch: true
+
+entryPoints:
+  http:
+    address: ":80"
+  https:
+    address: ":443"
